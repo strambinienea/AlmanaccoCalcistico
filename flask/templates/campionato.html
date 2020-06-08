@@ -2,13 +2,14 @@
 {% block title %} Campionato {% endblock %}
 
 {% block content %}
+
 <div class="row mt-4">
     <div class="col-sm-10 offset-sm-1">
-        <h2 class="text-center">Campionato Anno: {{ campionato }}</h2>
+        <h2 class="text-center">Campionato Anno: {{ campionato[1] }}</h2>
 
         <!-- GENERAZIONE TABELLA FASI CAMPIONATO -->
         <h3 class="text-center mt-5">Fasi</h3>
-        <div></div>
+
         <ul class="list-group mt-4">
             <div class="list-group-item list-group-item-action border border-secondary">
                 <div class="row">
@@ -21,13 +22,13 @@
 
             {% for partita in partite %}
 
-            <a href="{{ url_for('partita', partita=partita) }}"
+            <a href="{{ url_for('partita', id1=partita[4], id2=partita[5], idcampionato=campionato[0]) }}"
                 class="list-group-item list-group-item-action border border-secondary">
                 <div class="row">
                     <div class="col-sm-3 text-center">{{ partita[0] }}</div>
                     <div class="col-sm-3 text-center">{{ partita[1] }}</div>
+                    <div class="col-sm-3 text-center">{{ partita[2] }}</div>
                     <div class="col-sm-3 text-center">{{ partita[3] }}</div>
-                    <div class="col-sm-3 text-center">{{ partita[4] }}</div>
                 </div>
             </a>
 
@@ -36,7 +37,7 @@
 
         <!-- GENERAZIONE TABELLA CLASSIFICA CAMPIONATO -->
         <h3 class="text-center mt-5">Classifica</h3>
-        <div></div>
+
         <ul class="list-group mt-4">
             <div class="list-group-item list-group-item-action border border-secondary">
                 <div class="row">
@@ -58,4 +59,5 @@
         </ul>
     </div>
 </div>
+
 {% endblock %}

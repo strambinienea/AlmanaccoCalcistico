@@ -1,0 +1,103 @@
+{% extends "template.html" %}
+{% block title %} Partita {% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+
+    <!-- CARD SQUADRA OSPITANTE -->
+    <div class="col-sm-6 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title text-center"> {{ squadra1["nome"] }} </h4>
+            </div>
+            <ul class="card-body list-group-mt-4">
+                <div class="list-group-item list-group-item-action border border-secondary">
+                    <div class="row">
+
+                        <div class="col-sm-4 text-center"><b>Nome</b></div>
+                        <div class="col-sm-5 text-center"><b>Cognome</b></div>
+                        <div class="col-sm-3 text-center"><b>Numero</b></div>
+
+                    </div>
+                </div>
+
+                {% for giocatore in squadra1["giocatori"] %}
+
+                <div class="list-group-item list-group-item-action border border-secondary">
+                    <div class="row">
+
+                        <div class="col-sm-4 text-center">{{ giocatore[0] }}</div>
+                        <div class="col-sm-5 text-center">{{ giocatore[1] }}</div>
+                        <div class="col-sm-3 text-center">{{ giocatore[2] }}</div>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- CARD SQUADRA OSPITATA -->
+    <div class="col-sm-6 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title text-center"> {{ squadra2["nome"] }} </h4>
+            </div>
+            <ul class="card-body list-group-mt-4">
+                <div class="list-group-item list-group-item-action border border-secondary">
+                    <div class="row">
+
+                        <div class="col-sm-4 text-center"><b>Nome</b></div>
+                        <div class="col-sm-5 text-center"><b>Cognome</b></div>
+                        <div class="col-sm-3 text-center"><b>Numero</b></div>
+
+                    </div>
+                </div>
+
+                {% for giocatore in squadra2["giocatori"] %}
+
+                <div class="list-group-item list-group-item-action border border-secondary">
+                    <div class="row">
+
+                        <div class="col-sm-4 text-center">{{ giocatore[0] }}</div>
+                        <div class="col-sm-5 text-center">{{ giocatore[1] }}</div>
+                        <div class="col-sm-3 text-center">{{ giocatore[2] }}</div>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-sm-10 offset-sm-1">
+        <ul class="list-group-mt-4">
+            <div class="list-group-item list-group-item-action border border-secondary">
+                <div class="row">
+
+                    <div class="col-sm-3 text-center"><b>Data</b></div>
+                    <div class="col-sm-3 text-center"><b>Vincitore</b></div>
+                    <div class="col-sm-3 text-center"><b>Fase</b></div>
+                    <div class="col-sm-3 text-center"><b>Stadio</b></div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-3 text-center">{{ partita[5] }}</div>
+                    <div class="col-sm-3 text-center">{{ partita[3] }}</div>
+                    <div class="col-sm-3 text-center">{{ partita[2] }}</div>
+                    <div class="col-sm-3 text-center">{{ partita[4] }}</div>
+
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
