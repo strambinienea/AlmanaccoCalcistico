@@ -36,10 +36,6 @@ cursor = database.cursor()
 
 # INIZIO INSERT CALCIATORI
 
-# CANCELLA TUTTI I DATI DA CALCIATORE
-cursor.execute('DELETE FROM public.Calciatore')
-database.commit()
-
 sql = 'INSERT INTO public.Calciatore ("CF", "Nome", "Cognome", "Numero") VALUES (%s, %s, %s, %s)'
 calciatori = []
 
@@ -62,8 +58,6 @@ database.commit()
 
 # INIZIO INSERT SQUADRE
 
-# cursor.execute('DROP TABLE public.Squadra')
-# cursor.execute('CREATE TABLE public.Squadra ("ID" SERIAL NOT NULL, "Nome" VARCHAR(50) NOT NULL, "Stagione" VARCHAR(9) NOT NULL, "Punti" INT NOT NULL, PRIMARY KEY ("ID"));')
 database.commit()
 
 squadre = (
@@ -152,8 +146,6 @@ database.commit()
 
 # INIZIO INSERT CAMPIONATO
 
-# cursor.execute('DROP TABLE public.Campionato')
-# cursor.execute('CREATE TABLE public.Campionato ("ID" SERIAL NOT NULL, "Stagione" VARCHAR (9) NOT NULL, PRIMARY KEY ("ID"));')
 database.commit()
 
 cursor.execute(
